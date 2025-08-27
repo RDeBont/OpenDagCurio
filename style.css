@@ -229,7 +229,7 @@ p.card-text {
 
 /* mijn mening */
 .mijnMening {
-    margin: 0px 14% 50px 14%;   
+    margin: 0px 14% 50px 14%;
     padding: 40px 20px;
 
     text-align: center;
@@ -240,7 +240,7 @@ p.card-text {
 
 
 /* footer */
-.footerContainer{
+.footerContainer {
     border-top: #fc0 2px solid;
     margin: 0 auto;
     padding: 20px;
@@ -272,6 +272,11 @@ p.card-text {
 }
 
 @media (max-width: 700px) {
+    .nav-separator {
+        display: none;
+    }
+
+
     .parent {
         display: flex;
         flex-direction: column;
