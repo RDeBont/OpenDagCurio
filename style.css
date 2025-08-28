@@ -17,21 +17,30 @@ body::-webkit-scrollbar {
 }
 
 body {
+    padding: 0px;
     color: black;
     background-color: white;
     overflow-x: hidden !important;
-    /* forceren */
     width: 100vw;
-    /* voorkom breedte overschrijding */
 }
 
 /* Navbar */
 .navbar {
     color: black;
     padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    
 }
 
+
 .navbar-container {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -104,72 +113,89 @@ body {
 }
 
 
-.parent {
+.containerOpleiding
+{
+    margin: 40px auto;
+    max-width: 1300px;
+}
+
+.cardOpleiding {
     margin: 20px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
-    border-bottom: #fc0 2px solid;
-    border-top: #fc0 2px solid;
-    padding: 20px 0;
-
+    padding: 40px 20px;
+    background-color: #fc0;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.parent h2 {
-    border-bottom: #fc0 2px solid;
+/* Linker tekstvak */
+.textLeft {
+    flex: 1 1 340px;
+    min-width: 280px;
+    max-width: 480px;
+    margin-bottom: 50px;
+}
+
+.textLeft h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #222;
+    border-bottom: 2px solid #222;
     width: fit-content;
-    margin-bottom: 10px;
 }
 
-
-.linksBoven {
-    grid-column-start: 2;
+.textLeft p {
+    border-radius: 14px;
+    font-size: 1.1rem;
 }
 
-.linksMid {
-    grid-column-start: 2;
-    grid-row-start: 2;
+/* Afbeelding rechts */
+.rechtsImg {
+    flex: 1 1 400px;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.rechtsTop {
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 1;
-
-}
-
-.rechtsTop img {
-    margin-left: 20px;
+.rechtsImg img {
     width: 100%;
-    height: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    transition: transform 0.2s;
     object-fit: cover;
-    display: block;
-    border-radius: 10px;
-
 }
 
-.Bottem {
-    grid-column: span 3 / span 3;
-    grid-column-start: 2;
-    grid-row-start: 3;
+.rechtsImg img:hover {
+    transform: scale(1.03);
 }
-
 
 /* Vakken */
-
-section {
+.section {
     padding: 3rem 1.5rem;
     text-align: center;
 }
 
 .container {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
+.container h2{
+    border-bottom: #fc0 2px solid;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+}
+
+.container p{
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
 h2 {
     font-size: 2rem;
     font-weight: bold;
@@ -200,7 +226,7 @@ p.intro {
 }
 
 .card {
-    background-color: #fff;
+    background-color: rgba(212, 212, 212, 1);
     padding: 1.5rem;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -229,12 +255,12 @@ p.card-text {
 
 /* mijn mening */
 .mijnMening {
-    margin: 0px 14% 50px 14%;
+    margin: 80px 14% 50px 14%;
     padding: 40px 20px;
 
     text-align: center;
     background-color: #fc0;
-    border-radius: 10px;
+    border-radius: 25px;
 
 }
 
@@ -242,11 +268,10 @@ p.card-text {
 /* footer */
 .footerContainer {
     border-top: #fc0 2px solid;
-    margin: 0 auto;
     padding: 20px;
     text-align: center;
     color: black;
-    margin: 0px 20px;
+    margin: 50px 20px;
 
 }
 
@@ -269,6 +294,30 @@ p.card-text {
 .foooterlinks a:hover {
     text-decoration: underline;
     color: #fc0;
+}
+
+/* Animatie logo */
+
+.containerOpleiding{
+    animation: fly-in 4s ease-out forwards;
+    opacity: 0; 
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: fly-in 2s ease-out forwards;
+    opacity: 0; 
+}
+
+@keyframes fly-in {
+    0% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 700px) {
@@ -331,3 +380,20 @@ p.card-text {
         font-size: 1rem;
     }
 }
+
+/* Responsive voor mobiel */
+@media (max-width: 900px) {
+    .cardOpleiding {
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+    }
+    .rechtsImg img {
+        max-width: 100%;
+        height: 200px;
+    }
+    .containerOpleiding {
+        padding: 20px 0;
+    }
+}
+
