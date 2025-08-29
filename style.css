@@ -81,7 +81,6 @@ body {
 .hero {
     position: relative;
     height: 93vh;
-    /* hoogte achtergrond */
     background: url("img/Background.jpg") no-repeat center center/cover;
     display: flex;
     justify-content: center;
@@ -271,8 +270,13 @@ p.card-text {
     padding: 20px;
     text-align: center;
     color: black;
-    margin: 50px 20px;
+    margin: 40px 20px 0px 20px;
 
+}
+
+.footerContainer p {
+    margin: 8px 0;
+    font-size: 0.9rem;
 }
 
 
