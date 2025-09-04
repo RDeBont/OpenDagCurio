@@ -81,7 +81,7 @@ body {
 /* Achtergrond met tekstblok */
 .hero {
     position: relative;
-    height: 93vh;
+    height: 100vh;
     background: url("img/Background.jpg") no-repeat center center/cover;
     display: flex;
     justify-content: center;
