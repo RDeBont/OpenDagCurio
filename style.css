@@ -36,6 +36,7 @@ body {
     background: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     
+    
 }
 
 
@@ -91,7 +92,7 @@ body {
     margin-right: 65%;
     /* half transparant */
     ;
-    margin-bottom: 20%;
+    margin-bottom: 5%;
     width: 400px;
 }
 
@@ -330,6 +331,10 @@ p.card-text {
     }
 
 
+    .info-box{
+        margin: 0 5% 5% 5%;
+        width: auto;
+    }
     .parent {
         display: flex;
         flex-direction: column;
